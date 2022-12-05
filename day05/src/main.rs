@@ -32,16 +32,15 @@ fn sol(input: String) -> String {
         }
     }
 
-    let mut answer = crates
+    let part1 = crates
         .into_iter()
         .map(|crate_list| *(crate_list.back().unwrap()))
         .collect::<String>();
-    answer.push_str(" and ");
-    answer.push_str(crates2
+    let part2 = crates2
         .into_iter()
         .map(|crate_list| *(crate_list.back().unwrap()))
-        .collect::<String>().as_str());
-    answer
+        .collect::<String>();
+    format!("{} and {}", part1, part2)
 }
 
 fn parse_crates(unparsed_crates: &str) -> Vec<LinkedList<char>> {
